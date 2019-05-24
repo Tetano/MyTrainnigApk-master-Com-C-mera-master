@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="lucaspg.unitins.br.academia">
 
+    <uses-feature
+            android:name="android.hardware.camera2"
+            android:required="true"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/xxhdpi_unifit"
@@ -9,6 +15,7 @@
             android:roundIcon="@mipmap/xxhdpi_unifit"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+
         <activity android:name=".CadastrarFotos">
         </activity>
         <activity android:name=".CadastroActivity">
@@ -42,15 +49,10 @@
                 android:authorities="com.coutocode.cameraexample.fileprovider"
                 android:exported="false"
                 android:grantUriPermissions="true">
-                <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
-
-
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"/>
         </provider>
-
     </application>
-    <uses-feature android:name="android.hardware.camera2" android:required="true"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
 </manifest>

@@ -58,13 +58,8 @@ class CadastroActivity : Activity() {
 
                 )
 
-                usuario.nome = nome.text.toString()
-                usuario.login = login.text.toString()
-                usuario.altura = altura.text.toString().toDouble()
-                usuario.peso = peso.text.toString().toDouble()
-                usuario.senha = senha.text.toString()
 
-                val user = Usuario(usuario.nome,usuario.peso,usuario.altura,usuario.login,usuario.senha)
+              //  val user = Usuario(usuario.nome,usuario.peso,usuario.altura,usuario.login,usuario.senha)
 
 
                 lista.usuarios.add(usuario)
@@ -79,16 +74,20 @@ class CadastroActivity : Activity() {
                 idLista.setText(usuario.nome)
 
                 // nome.setText(usuario.nome)
-                nome.setText(lista.usuarios[0].nome.toString())
-                peso.setText(lista.usuarios[0].peso.toString())
-                altura.setText(lista.usuarios[0].altura.toString())
-                login.setText(lista.usuarios[0].login.toString())
-                senha.setText(lista.usuarios[0].senha.toString())
+//                nome.setText(lista.usuarios[0].nome.toString())
+//                peso.setText(lista.usuarios[0].peso.toString())
+//                altura.setText(lista.usuarios[0].altura.toString())
+//                login.setText(lista.usuarios[0].login.toString())
+//                senha.setText(lista.usuarios[0].senha.toString())
 
                 alert("Usuário cadastrado com sucesso!")
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("",user.nome)
-                setResult(0,intent)
+                val intent = Intent(this, CadastrarTreinoActivity::class.java)
+                intent.putExtra("usuario",lista)
+
+
+                startActivity(intent)
+
+                Log.d("Verificando usuario",usuario.toString())
                 finish()
             }
         }
@@ -120,6 +119,8 @@ class CadastroActivity : Activity() {
     fun alert(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
+
+
 
 
 

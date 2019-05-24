@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         var login = tLogin.text.toString()
         var senha = tSenha.text.toString()
-
+        val usuario = intent.getSerializableExtra("usuario") as ListUsuario
 
 
             if ("admin".equals(login) && "123".equals(senha)) {
@@ -55,7 +55,23 @@ class MainActivity : AppCompatActivity() {
             } else {
                 alert("Login e/ou Senha Incorretos")
             }
+
+        if ("admin".equals(login) && "123".equals(senha)) {
+            var intent = Intent(applicationContext, MenuMembroActivity::class.java)
+            startActivity(intent)
+            alert("Bem Vindo, Acesso Realizado com Sucesso")
+        } else {
+            alert("Login e/ou Senha Incorretos")
         }
+    }
+
+    fun percorrerEretornar(listusuario : ListUsuario,tLogin: EditText,tSenha: EditText){
+      var i : Int // 
+//        while ()
+
+    }
+
+
 
 
     fun Cadastrar() {
