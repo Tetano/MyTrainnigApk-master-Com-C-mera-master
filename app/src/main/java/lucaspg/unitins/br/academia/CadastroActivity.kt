@@ -81,12 +81,11 @@ class CadastroActivity : Activity() {
 //                senha.setText(lista.usuarios[0].senha.toString())
 
                 alert("Usuário cadastrado com sucesso!")
-                val intent = Intent(this, CadastrarTreinoActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("usuario",lista)
 
 
-                startActivity(intent)
-
+                setResult(0,intent)
                 Log.d("Verificando usuario",usuario.toString())
                 finish()
             }

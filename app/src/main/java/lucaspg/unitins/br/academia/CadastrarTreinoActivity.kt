@@ -25,5 +25,9 @@ class CadastrarTreinoActivity : AppCompatActivity() {
         val usuario = intent.getSerializableExtra("usuario") as ListUsuario
 
         nome.setText(usuario.usuarios[0].nome)
+       login.setText(usuario.usuarios[0].login)
+        senha.setText(usuario.usuarios[0].senha)
+        altura.setText(usuario.usuarios[0].altura.toString())
+        peso.setText(usuario.usuarios[0].peso.toString())
     }
 }
