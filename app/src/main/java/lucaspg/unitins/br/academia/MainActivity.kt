@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun percorrerEretornar(listusuario : ListUsuario,tLogin: EditText,tSenha: EditText){
-      var i : Int // 
+      var i : Int // //
 //        while ()
 
     }
